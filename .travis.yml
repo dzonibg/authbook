@@ -1,4 +1,4 @@
-# ..travis.yml
+# ..travis.yml testing.
 dist: precise
 
 language: php
