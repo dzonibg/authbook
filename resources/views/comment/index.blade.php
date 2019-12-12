@@ -10,4 +10,17 @@
     @endslot
     @endcomponent
     @endforeach
-    @endsection
+
+@guest
+    <p>To comment, you need to be signed in.</p>
+    @endguest
+@auth
+    <div class="form-control">
+    <form action="/comment" method="POST">
+        @csrf
+        <input  id="text" placeholder="Comment text" name="text">
+        <button type="submit" class="btn-primary">Submit</button>
+    </form>
+    </div>
+    @endauth
+@endsection
