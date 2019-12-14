@@ -1,4 +1,4 @@
-# ..travis.yml testing.
+# .travis.yml
 dist: precise
 
 language: php
@@ -15,10 +15,10 @@ cache:
     - vendor
 
 before_script:
-  - cp .env .env
+  - cp .env.travis .env
+  - sudo mysql -e 'CREATE DATABASE authbook;'
   - composer self-update
   - composer install --no-interaction
-  - php artisan migrate --no-interaction -vvv
-
+  - php artisan key:generate
 script:
   - vendor/bin/phpunit
