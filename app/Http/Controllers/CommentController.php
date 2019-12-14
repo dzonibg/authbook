@@ -38,9 +38,8 @@ class CommentController extends Controller
     public function store(Request $request)
     {
         $user = \Auth::user();
-        $user->comment()->create([
-            'text' => $request->text,
-        ]);
+        $validated = $this->validated($request);
+        $user->comment()->create($validated);
         return redirect("/comment");
 
     }
@@ -89,5 +88,11 @@ class CommentController extends Controller
     {
         $comment->delete();
         return redirect("/comment");
+    }
+
+    public function validated() {
+        return request()->validate([
+            'text' => 'required',
+        ]);
     }
 }
