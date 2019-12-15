@@ -63,7 +63,7 @@ class CommentController extends Controller
      */
     public function edit(Comment $comment)
     {
-        //
+        return view("comment.edit", compact("comment"));
     }
 
     /**
@@ -75,7 +75,8 @@ class CommentController extends Controller
      */
     public function update(Request $request, Comment $comment)
     {
-        //
+        $comment->update($this->validated());
+        return redirect("/comment");
     }
 
     /**
