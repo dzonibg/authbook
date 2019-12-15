@@ -12,6 +12,7 @@
             @csrf
             <button type="submit" class="btn-danger">X</button>
         </form>
+        <a href="/comment/{{$comment->id}}/edit">Edit</a>
     @endslot
     @slot("slot")
     {{$comment->text}}
