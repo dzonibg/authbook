@@ -22,3 +22,6 @@ Route::resource("comment", "CommentController");
 Route::get("/test", function () {
     return view("test");
 });
+
+Route::resource("users", "UserController");
+
