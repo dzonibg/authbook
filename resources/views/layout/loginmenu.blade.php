@@ -23,6 +23,8 @@
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
             </form>
+
+            <a class="dropdown-item" href="/password/reset">Reset password</a>
         </div>
     </li>
 @endguest
