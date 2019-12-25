@@ -6,7 +6,7 @@
     @endslot
     @slot("slot")
     {{$user->email}}
-    <p>Latest comment: {{$user->comment->last()->text}} </p>
+    <p>Latest comment: {{$user->comment->last()->text ?? 'No comments. :('}} </p>
     <p>Total comments: {{$user->comment->count()}}</p>
     @endslot
     @endcomponent
