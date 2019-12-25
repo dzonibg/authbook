@@ -16,7 +16,7 @@ cache:
 
 before_script:
   - cp .env.travis .env
-  - sudo mysql -e 'CREATE DATABASE authbook;'
+  - sudo mysql -e 'CREATE DATABASE authbook CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;'
   - composer self-update
   - composer install --no-interaction
   - php artisan key:generate
