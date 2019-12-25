@@ -4,7 +4,9 @@ dist: precise
 language: php
 
 php:
-  - 7.2
+  - 7.3
+services:
+  - mariadb
 
 addons:
   mariadb: 10.4
