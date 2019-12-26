@@ -15,9 +15,9 @@
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="/">Index</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="/comment">Comments</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="/users">Users</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="/">Index</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link {{ request()->is('comment') ? 'active' : '' }}" href="/comment">Comments</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link {{ request()->is('users') ? 'active' : '' }}" href="/users">Users</a></li>
                         @component("layout.loginmenu")
                             @endcomponent
                 </ul>
