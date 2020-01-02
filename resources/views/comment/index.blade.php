@@ -7,12 +7,14 @@
     @slot("heading")
         {{$comment->user->name}} --
         {{$comment->created_at}}
+        @if (@auth()->user()->id == $comment->user_id)
         <form class="form-check-inline" action="/comment/{{$comment->id}}" method="POST">
             @method("DELETE")
             @csrf
             <button type="submit" class="btn-danger">X</button>
         </form>
         <a href="/comment/{{$comment->id}}/edit">Edit</a>
+        @endif
     @endslot
     @slot("slot")
     {{$comment->text}}
